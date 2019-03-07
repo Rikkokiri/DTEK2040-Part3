@@ -2,6 +2,6 @@ POST http://localhost:3001/api/persons/
 Content-Type: application/json
 
 {
-  "name":"Väiski Vemmelsääri",
+  "name":"Väinö Vemmelsääri",
   "number":"040-545738854"
 }
