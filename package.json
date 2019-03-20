@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Rikkokiri/DTEK2040-Part3#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.16.4"
   },
   "devDependencies": {
