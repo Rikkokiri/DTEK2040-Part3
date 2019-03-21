@@ -1,12 +1,12 @@
 const express = require('express')
 const app = express()
 app.use(express.static('build'))
-
 const cors = require('cors')
 app.use(cors())
-
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
+
+const Person = require('./models/person')
 
 let persons = [
   {
@@ -32,7 +32,11 @@ let persons = [
 ]
 
 app.get('/api/persons', (request, response) => {
-  response.json(persons)
+  Person
+    .find({}, { __v: 0 })
+    .then(persons => {
+      response.json(persons.map(Person.format))
+    })
 })
 
 app.get('/api/persons/:id', (request, response) => {
